@@ -67,6 +67,8 @@ user=storm' >> /etc/supervisord.conf
 service supervisord start
 chkconfig supervisord on
 
-wget http://public-repo-1.hortonworks.com/HDP-LABS/Projects/Storm/0.9.0.1/storm-starter-0.0.1-storm-0.9.0.1.jar
-
-storm jar storm-starter-0.0.1-storm-0.9.0.1.jar storm.starter.WordCountTopology WordCount -c nimbus.host=sandbox.hortonworks.com
+# Run this line to submit a WordCount topology for testing
+# Sleep to allow the storm cluster time to start
+#wget http://public-repo-1.hortonworks.com/HDP-LABS/Projects/Storm/0.9.0.1/storm-starter-0.0.1-storm-0.9.0.1.jar
+#sleep 10
+#storm jar storm-starter-0.0.1-storm-0.9.0.1.jar storm.starter.WordCountTopology WordCount -c nimbus.host=sandbox.hortonworks.com
