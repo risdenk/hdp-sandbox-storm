@@ -5,11 +5,13 @@ yum -y install supervisor
 groupadd storm
 useradd --gid storm --home-dir /home/storm --create-home --shell /bin/bash storm
 
-wget http://public-repo-1.hortonworks.com/HDP-LABS/Projects/Storm/0.9.0.1/storm-0.9.0.1.tar.gz
+STORM_VER="0.9.1-incubating"
+#wget http://public-repo-1.hortonworks.com/HDP-LABS/Projects/Storm/${STORM_VER}/storm-${STORM_VER}.tar.gz
+wget http://mirror.cc.columbia.edu/pub/software/apache/incubator/storm/apache-storm-${STORM_VER}/apache-storm-${STORM_VER}.tar.gz
 
-tar -zxf storm-0.9.0.1.tar.gz -C /usr/share
-chown -R storm:storm /usr/share/storm-0.9.0.1
-ln -s /usr/share/storm-0.9.0.1 /usr/share/storm
+tar -zxf apache-storm-${STORM_VER}.tar.gz -C /usr/share
+chown -R storm:storm /usr/share/apache-storm-${STORM_VER}
+ln -s /usr/share/apache-storm-${STORM_VER} /usr/share/storm
 ln -s /usr/share/storm/bin/storm /usr/bin/storm
 mkdir /etc/storm
 chown storm:storm /etc/storm
